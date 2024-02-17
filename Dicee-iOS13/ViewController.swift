@@ -17,13 +17,18 @@ class ViewController: UIViewController {
         // What will be showing on the screen at application start up
         super.viewDidLoad()
 
-        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
-//        diceImageView1.alpha = 0.5
-        
-        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceTwo")
+        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceOne")
+        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceOne")
         
     }
 
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        var diceImagesArray: [String] = ["DiceOne", "DiceTwo", "DiceThree", "DiceFour", "DiceFive", "DiceSix"]
+        
+        diceImageView1.image = UIImage(imageLiteralResourceName: diceImagesArray[Int.random(in: 0...5)])
+        diceImageView2.image = UIImage(imageLiteralResourceName: diceImagesArray[Int.random(in: 0...5)])
 
+    }
+    
 }
 
